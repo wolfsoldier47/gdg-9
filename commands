@@ -1,0 +1,37 @@
+$ gcloud auth login
+$ gcloud services enable container.googleapis.com
+$ gcloud services enable compute.googleapis.com
+$gcloud services enable 
+
+$ gcloud iam service-accounts create [SERVICE_ACCOUNT_NAME] \
+    --description="Service account for Kubernetes management" \
+    --display-name="K8s Admin"
+
+# get keys
+gcloud iam service-accounts keys create ./k8s-admin-key.json \
+    --iam-account gdg-kl@gdgkl-438603.iam.gserviceaccount.com
+
+
+# assign roles
+$ gcloud projects add-iam-policy-binding <project id> --member="serviceAccount:<account>" --role= "roles/compute.admin"
+
+$ gcloud projects add-iam-policy-binding <project id> --member="serviceAccount:<account>" --role= "roles/iam.serviceAccountUser"
+
+$ gcloud projects add-iam-policy-binding <project id> --member="serviceAccount:<account>" --role= "roles/container.admin"
+
+$ gcloud auth activate-service-account --key-file=<keyfile>
+
+$ gcloud config set project <project-id>
+
+$ gcloud config set comput/zone us-central1-a
+
+$ gcloud config set account <account>
+
+$ gcloud container clusters create-auto gdg-prod --region asia-southeast2 --service-account=<service account>
+
+
+
+
+# list and delete all cluster operations
+gcloud container operations list
+gcloud container operations cancel OPERATION_ID

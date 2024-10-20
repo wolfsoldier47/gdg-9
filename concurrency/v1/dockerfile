@@ -1,14 +1,14 @@
-# Stage 1: Build the Go binary
 FROM golang:1.23-alpine AS builder
-
-
+ENV GOOS=linux \
+    GOARCH=amd64
 WORKDIR /app
 COPY . .
 RUN go build -o go-app .
 
-# Stage 2: Create a lightweight container
+# Stage 2: Create a lightweight container with the app
 FROM alpine:latest
 WORKDIR /app
-COPY --from=builder /app/. .
+COPY --from=builder /app/* .
 EXPOSE 8080
 CMD ["./go-app"]
+

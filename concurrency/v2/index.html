@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Matrix Multiplication with Go</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+
+    </style>
+</head>
+<body>
+
+<canvas id="canvas"></canvas>
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/368px-Google_2015_logo.svg.png" alt="Google Logo" class="google-logo" width="10" height="40"></a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="line"></div>
+    <div>
+        <h1>Matrix Multiplication with Go</h1>
+        <form id="matrixForm" class="mt-4">
+            <div class="mb-3">
+                <label for="size" class="form-label">Matrix Size:</label>
+                <input type="number" id="size" name="size" class="form-control text-center" min="1" placeholder="Enter matrix size" required>
+            </div>
+            <button type="submit" class="btn">Start Multiplication</button>
+        </form>
+        
+        <div id="loading" class="mt-4">Loading<span class="dot-loading">.</span><span class="dot-loading">.</span><span class="dot-loading">.</span></div>
+        <div id="result" ></div>
+    </div>
+
+        <div class="line"></div>
+        <div style="max-height: 400px; overflow-y: auto; padding: 10px;">
+            <h1>Getting all the results from DB</h1>
+            <form id="matrixForm2" class="mt-4">
+                <div class="mb-3">
+                    <label for="size" class="form-label">Matrix Size:</label>
+                </div>
+                <button type="submit" class="btn">Get All result</button>
+            </form>
+            
+            <div id="loading2" class="mt-4" style="display:none;">Loading<span class="dot-loading">.</span><span class="dot-loading">.</span><span class="dot-loading">.</span></div>
+            <div id="result2" class="fade-in"></div>
+        </div>
+</div>
+
+<script src="/static/style.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,206 @@
+body {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    height: 100vh;
+
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    animation: gradientShift 10s infinite alternate;
+}
+
+@keyframes gradientShift {
+    0% {
+        background: linear-gradient(135deg, #1a1a2e, #16213e);
+    }
+    100% {
+        background: linear-gradient(135deg, #1f4068, #1b1b2f);
+    }
+}
+
+/* Container styles */
+
+
+#size {
+    border-radius: 30px;
+    border: none;
+    padding: 10px;
+    background-color: #16213e;
+    color: #fff;
+}
+
+/* Loading dots styling */
+#loading {
+    display: none; /* Initially hidden */
+    justify-content: center;
+    font-size: 20px;
+    color: #4dd0e1;
+    margin-top: 30px;
+}
+#loading2 {
+    display: none; /* Initially hidden */
+    justify-content: center;
+    font-size: 20px;
+    color: #4dd0e1;
+    margin-top: 30px;
+}
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+.fade-in.show {
+    opacity: 1;
+}
+.dot-loading {
+    opacity: 0;
+    animation: blink 1.5s infinite;
+}
+
+.dot-loading:nth-child(1) {
+    animation-delay: 0s;
+}
+.dot-loading:nth-child(2) {
+    animation-delay: 0.3s;
+}
+.dot-loading:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+#result {
+    font-size: 18px;
+    margin-top: 20px;
+    max-height: 200px;
+    max-width: 500px; /* Set a maximum height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1); /* Light background for visibility */
+    border-radius: 10px;
+}
+
+/* Google logo styling */
+.google-logo {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+/* Fancy button styling */
+button {
+    margin-top: 20px;
+    padding: 10px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    background-color: #4dd0e1;
+    color: white;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #009688;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3px);
+}
+
+/* Canvas for dots */
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7); /* Dark transparent */
+    border: none; /* Remove border */
+}
+.navbar .navbar-brand,
+.navbar .navbar-nav > li > a {
+    color: white; /* White text for items */
+}
+.navbar .navbar-nav > li > a:hover {
+    color: #4dd0e1; /* Change color on hover */
+}
+.navbar-default .navbar-toggle {
+    border-color: transparent; /* Transparent toggle */
+}
+
+.container {
+    display: flex; /* Flexbox layout for horizontal arrangement */
+    align-items: flex-start; /* Align items at the start */
+    justify-content: space-between; /* Space between items */
+    text-align: center; /* Center text within each section */
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    position: relative;
+    width: 80%; /* Optional: adjust the container width */
+    margin: 0 auto; /* Center the container */
+}
+
+.line {
+    height: 100%; /* Full height */
+    width: 2px; /* Line width */
+    background-color: white; /* Line color */
+    margin: 0 20px; /* Spacing around the line */
+}
+
+.matrix-list {
+    text-align: left; /* Align text to the left */
+    color: white; /* Text color */
+    max-height: 400px; /* Limit height */
+    overflow-y: auto; /* Enable scrolling */
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Background for contrast */
+    border-radius: 10px; /* Rounded corners */
+    flex-grow: 1; /* Allow this section to take remaining space */
+}
+
+/* Align the button container to the left */
+.button-container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Align items to the start (left) */
+    margin-bottom: 10px; /* Space below the button */
+}
+
+/* Title style */
+.matrix-title {
+    color: white; /* Title text color */
+    font-weight: bold; /* Bold text */
+    margin-bottom: 10px; /* Space below title */
+}
+
+/* Adjust the button to be on the left */
+#listValuesButton {
+    align-self: flex-start; /* Align to the left */
+    margin-bottom: 20px; /* Space below the button */
+}
+
+.form-section {
+    flex: 1; /* Make each section grow equally */
+    margin: 0 10px; /* Space between sections */
+}
+.google-logo {
+    height: 80px;
+    width: 100px;
+    padding-bottom: 55px;
+    margin: 5px; /* Adjust margins to center it vertically */
+}

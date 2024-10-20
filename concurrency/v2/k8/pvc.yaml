@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgres-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: fast-ssd  # Match the StorageClass created above
+  resources:
+    requests:
+      storage: 10Gi  # 10GB of storage for PostgreSQL
+

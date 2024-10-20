@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: my-app
+  strategy: 
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: my-app
+        image: gcr.io/gdgkl-438603/my-app:v2
+        imagePullPolicy: Always
+        env:
+          - name: DB_USERNAME
+            value: root
+
+          - name: DB_PASSWORD
+            value: root
+
+          - name: DB_NAME
+            value: root
+
+          - name: DB_HOST
+            value: postgres
+
+          - name: DB_PORT
+            value: "5432"
+
+        ports:
+        - containerPort: 8080
+

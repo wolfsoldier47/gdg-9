@@ -1,0 +1,18 @@
+# Use the official Go image
+FROM golang:1.23-alpine
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the Go application code into the container
+COPY . .
+
+# Build the Go application
+RUN go build -o go-app .
+
+# Expose the necessary port for the application
+EXPOSE 8080
+
+# Define the command to run the app
+CMD ["./go-app"]
+
